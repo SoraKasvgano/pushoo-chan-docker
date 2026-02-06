@@ -124,3 +124,6 @@ auth:
     # GET
     curl --get -vv https://push.host/send?charset=gbk --data-urlencode "text=啦啦啦"
     ```
+## 其他
+
+- [Go版本分支](https://github.com/SoraKasvgano/pushoo-chan-golang)
