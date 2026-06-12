@@ -44,6 +44,16 @@ channel_groups: # groups of channels
 
 default_channel: group2 # can be channel or channel_group name here
 
+# Optional: default settings for Tawk.to webhook forwarding.
+# Webhook URL example:
+# https://your-push-host/webhook/tawk?chan=group2&title=TRDLKchat
+webhooks:
+  tawk:
+    chan: group2
+    title: TRDLKchat
+    # Optional: set this if you enabled webhook secret in Tawk.to.
+    # secret: your_tawk_webhook_secret
+
 auth:
     user: admin
     pass: yourpassword

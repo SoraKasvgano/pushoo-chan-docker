@@ -138,3 +138,45 @@ auth:
     # GET
     curl --get -vv https://push.host/send?charset=gbk --data-urlencode "text=啦啦啦"
     ```
+
+## Tawk.to Webhook 兼容
+
+新增接口：
+
+```
+https://push.host/webhook/tawk?chan=group2&title=TRDLKchat
+```
+
+用途：
+
+- 接收 Tawk.to 官方 Webhook 的 `POST JSON`。
+- 自动把聊天开始、聊天结束、聊天记录、工单创建等事件转换为 `text/desp` 推送。
+- 继续复用现有 `chan` 通道和通道组，不影响原有 `/send` 接口。
+
+可选参数：
+
+- `chan`：推送到指定通道或通道组；不填时使用 `default_channel`。
+- `title`：推送标题前缀，例如 `TRDLKchat`；不填时使用 `Tawk.to`。
+- `secret`：Tawk webhook secret；填写后会校验 `X-Tawk-Signature`，校验失败返回 `401`。
+
+也可以把默认配置写进 YAML：
+
+```yaml
+webhooks:
+  tawk:
+    chan: group2
+    title: TRDLKchat
+    secret: your_tawk_webhook_secret
+```
+
+Tawk 后台 Webhook URL 示例：
+
+```
+https://push.host/webhook/tawk?chan=group2&title=TRDLKchat
+```
+
+如需签名校验：
+
+```
+https://push.host/webhook/tawk?chan=group2&title=TRDLKchat&secret=your_tawk_webhook_secret
+```

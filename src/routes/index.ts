@@ -3,6 +3,7 @@ import sendRouter from '@routes/send';
 import barkRouter from '@routes/bark';
 import barkv2Router from '@routes/barkv2';
 import configRouter from '@routes/config';
+import tawkRouter from '@routes/tawk';
 import qs from 'qs';
 import content_type from 'content-type'
 import mime from 'mime-types';
@@ -217,6 +218,8 @@ router
     .all('*', decodeRawBody)
     .all('*', parseBody)
     .all('/send/*', sendRouter.handle)
+    .all('/webhook/tawk', tawkRouter.handle)
+    .all('/webhook/tawk/*', tawkRouter.handle)
     .all('/bark/*', barkRouter.handle)
     .all('/barkv2/*', barkv2Router.handle)
 

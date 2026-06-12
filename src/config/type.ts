@@ -5,6 +5,7 @@ export type Config = {
     channel_groups?: ChannelGroupConfig[]
     default_channel?: string
     auth?: AuthConfig
+    webhooks?: WebhookConfig
 }
 
 export type ChannelConfig = {
@@ -21,4 +22,14 @@ export type ChannelGroupConfig = {
 export type AuthConfig = {
     user: string
     pass: string
+}
+
+export type WebhookConfig = {
+    tawk?: TawkWebhookConfig
+}
+
+export type TawkWebhookConfig = {
+    secret?: string
+    chan?: string
+    title?: string
 }
