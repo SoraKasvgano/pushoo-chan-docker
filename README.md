@@ -144,7 +144,7 @@ auth:
 新增接口：
 
 ```
-https://push.host/webhook/tawk?chan=group2&title=TRDLKchat
+https://push.host/webhook/tawk?chan=group2&title=tawktochat
 ```
 
 用途：
@@ -156,7 +156,7 @@ https://push.host/webhook/tawk?chan=group2&title=TRDLKchat
 可选参数：
 
 - `chan`：推送到指定通道或通道组；不填时使用 `default_channel`。
-- `title`：推送标题前缀，例如 `TRDLKchat`；不填时使用 `Tawk.to`。
+- `title`：推送标题前缀，例如 `tawktochat`；不填时使用 `Tawk.to`。
 - `secret`：Tawk webhook secret；填写后会校验 `X-Tawk-Signature`，校验失败返回 `401`。
 
 也可以把默认配置写进 YAML：
@@ -165,18 +165,18 @@ https://push.host/webhook/tawk?chan=group2&title=TRDLKchat
 webhooks:
   tawk:
     chan: group2
-    title: TRDLKchat
+    title: tawktochat
     secret: your_tawk_webhook_secret
 ```
 
 Tawk 后台 Webhook URL 示例：
 
 ```
-https://push.host/webhook/tawk?chan=group2&title=TRDLKchat
+https://push.host/webhook/tawk?chan=group2&title=tawktochat
 ```
 
 如需签名校验：
 
 ```
-https://push.host/webhook/tawk?chan=group2&title=TRDLKchat&secret=your_tawk_webhook_secret
+https://push.host/webhook/tawk?chan=group2&title=tawktochat&secret=your_tawk_webhook_secret
 ```
